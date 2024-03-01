@@ -6,15 +6,14 @@ import Search from './components/Search';
 
 
 function App() {
-
   return (
-  
-    <BrowserRouter>
-    <div className="App">
+
+  <BrowserRouter>
+    <div className='App'>
       <header>
-        <h1>Pokedex</h1>
+        <h1>Pokédex</h1>
         <nav>
-        <Link to="/">Pokedex</Link>
+        <Link to="/">Pokédex</Link>
         <Link to="/search">Search</Link>
         </nav>
       </header> 
@@ -22,9 +21,10 @@ function App() {
         <Route path="/" element={<Pokedex />} />
         <Route path="/search" element={<Search />} />
       </Routes>
-      </div>
-    </BrowserRouter>
-  );
+    </div>
+  </BrowserRouter>
+
+  )
 }
 
 export default App;

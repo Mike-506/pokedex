@@ -14,7 +14,7 @@ const Pokedex = (() => {
       setPokemonData(data.results);
     };
     fetchPokemon(pokemonData);
-  }, [pokemonData]);//add an empty array to call the function just once
+  }, [pokemonData]);
 
   const handleClick = async (pokemonName) => {
     const answer = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
@@ -29,7 +29,7 @@ const Pokedex = (() => {
 
   return (
     <div className="pokedex">
-      <h2>All Pokemon</h2>
+      <h2>All Pokémon</h2>
       <ul>
         {
           pokemonData.map(pokemon => (
@@ -44,20 +44,20 @@ const Pokedex = (() => {
       </ul>
 
         {showModal && selectedPokemon && (
-          <div>
+          <div className="modal-container">
             <div className="overlay" onClick={closeModal}>
             </div>
 
-            <div className="modal-container"> 
+            <div className="modal-info"> 
 
               <span className="close-modal" onClick={closeModal}>&times;</span>
 
               <h2>{selectedPokemon.name}</h2>
-              <img src={selectedPokemon.sprites.front_default} alt={selectedPokemon.name}/>
+              <img className="modal-img" src={selectedPokemon.sprites.front_default} alt={selectedPokemon.name}/>
               <p>Type: <span>{selectedPokemon.types[0].type.name}</span></p> 
               <p>Weight: <span>{selectedPokemon.weight}</span></p>
               <p>Heigth: <span>{selectedPokemon.height}</span></p>
-              <p>Base Exp: <span>{selectedPokemon.base_experience}</span></p>
+              <p>Exp: <span>{selectedPokemon.base_experience}</span></p>
         
             </div>
           </div>

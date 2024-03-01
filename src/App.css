@@ -1,5 +1,5 @@
 .App {
-  height: 100vh;
+  height: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -45,7 +45,6 @@ nav a:hover {
 .search-box {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
   justify-content: center;
 }
 
@@ -54,6 +53,8 @@ nav a:hover {
   font-size: 10px;
   border: 2px solid #ddd;
   border-radius: 4px;
+  width: 250px;
+  height: 15px;
 }
 
 .search-box input:hover {
@@ -71,8 +72,61 @@ button {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #2e4b74;
+}
+
+@media screen and (max-height: 430px) {
+  .App header {
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 5px;
+    h1 {
+      margin: 5px 0;
+    }
+    :link {
+      padding: 5px 70px;
+    }
+  }
+}
+
+@media screen and (max-height: 370px) {
+  .App header {
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 3px;
+    h1 {
+      margin: 5px 0;
+    }
+    :link {
+      padding: 5px 70px;
+    }
+  }
+}
+
+
+@media screen and (max-height: 550px) {
+  .App header {
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 5px;
+    h1 {
+      margin: 10px 0;
+    }
+    :link {
+      padding: 7px 40px;
+    }
+  }
 }

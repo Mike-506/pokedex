@@ -1,11 +1,17 @@
+.pokedex {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
 .pokedex ul {
-  padding: 0 10px;
+  padding: 10px;
   display: grid;
   grid-template-columns: repeat(4, 200px);
   gap: 20px;
   font-size: 10px;
   overflow-y: scroll;
-  height: 55vh;
+  height: 60vh;
 }
 
 .btn-modal {
@@ -41,6 +47,11 @@
   aspect-ratio: 2/2;
 }
 
+.modal-container {
+  display: flex;
+  justify-content: center;
+}
+
 .overlay {
   background-color: black;
   bottom:0;
@@ -51,18 +62,18 @@
   opacity: 80%;
 }
 
-.modal-container {
+.modal-info {
   background-color:snow;
   border: indigo 2px solid;
   height: auto;
   width: 350px;
-  position:absolute;
-  margin: auto;
+  position: fixed;
   padding: 1em;
-  top: 10%;
-  right: 33.3%;
-  left: 33.3%;
+  top: 18%;
+  align-items: center;
   text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-container img {
@@ -77,13 +88,18 @@
 .close-modal {
   cursor: pointer;
   opacity: 50%;
+  transition: opacity .4s ease-in;
+  -webkit-transition: opacity .4s ease-in;
+  -moz-transition: opacity .4s ease-in;
+  -ms-transition: opacity .4s ease-in;
+  -o-transition: opacity .4s ease-in;
 }
 
 .close-modal:hover {
   opacity: 100%;
 }
 
-/* responsive */
+/* responsive related to screen width */
 
 @media screen and (max-width: 1000px) {
   .pokedex ul {
@@ -95,13 +111,70 @@
 @media screen and (max-width: 800px) {
   .pokedex ul {
     grid-template-columns: repeat(3, 170px);
-    height: 78vh;
+  }
+  .modal-info {
+    width: 300px;
   }
 }
 
 @media screen and (max-width: 600px) {
   .pokedex ul {
     grid-template-columns: repeat(2, 150px);
-    height: 80vh;
+  }
+  .modal-info {
+    width: 230px;
+  }
+}
+
+
+/* responsive related to screen heigth*/
+@media screen and (max-height: 430px) {
+  .pokedex ul {
+    height: 40vh;
+  }
+  .modal-info {
+    width: 430px;
+    flex-wrap: wrap;
+    height: 240px;
+    top: 12%;
+    justify-content: center;
+  }
+  .modal-img {
+    width: 150px;
+  }
+  .close-modal{
+    position: absolute;
+    right: 50%;
+    top: 5%;
+  }
+}
+
+@media screen and (min-height: 400px) {
+  .pokedex ul {
+    height: 100vh;
+  }
+}
+
+@media screen and (min-height: 600px) {
+  .pokedex ul {
+    height: 120vh;
+  }
+}
+
+@media screen and (min-height: 910px) {
+  .pokedex ul {
+    height: 125vh;
+  }
+}
+
+@media screen and (min-height: 1070px) {
+  .pokedex ul {
+    height: 130vh;
+  }
+}
+
+@media screen and (min-height: 1270px) {
+  .pokedex ul {
+    height: 140vh;
   }
 }
