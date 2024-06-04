@@ -73,13 +73,16 @@ const Search = () => {
           <div className="pokemon-info">
 
           <div className="card-info">
-          <div>Type:<span>{pokemon.types[0].type.name}</span></div>
+          <div>Type:<span>{pokemon.types[0] ? pokemon.types[0].type.name : ""}</span>
+          {pokemon.types[1] ? <span>/{pokemon.types[1].type.name}</span> : ""}
+          </div>
           <div>Xp:<span>{pokemon.base_experience}</span></div>
           </div>
 
           <div className="abilities">Abilities:<br/> 
-          <span>•{pokemon.abilities[0].ability.name} </span> <br /> 
-          <span>•{pokemon.abilities[1].ability.name}</span></div>
+            {pokemon.abilities[0] ? <span>•{pokemon.abilities[0].ability.name}</span> : ""} <br /> 
+            {pokemon.abilities[1] ? <span>•{pokemon.abilities[1].ability.name}</span> : ""}
+          </div>
 
           <div className="stats">
           <div><RiSwordFill/><span>{pokemon.stats[1].base_stat}</span></div>
