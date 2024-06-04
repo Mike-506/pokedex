@@ -24,12 +24,12 @@ function App() {
       <header>
         <h1>Pokédex</h1>
         <nav>
-        <Link to="/">Pokémon</Link>
+        <Link to="/pokedex">Pokémon</Link>
         <Link to="/search">Search</Link>
         </nav>
       </header> 
       <Routes>
-        <Route path="/" element={<Pokedex array={pokemonData}/>} />
+        <Route path="/pokedex" element={<Pokedex array={pokemonData}/>} />
         <Route path="/search" element={<Search />} />
       </Routes>
     </div>
